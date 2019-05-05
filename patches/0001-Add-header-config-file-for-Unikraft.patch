@@ -1,0 +1,26 @@
+From a42a344157b73cd2562259358136a1c72b02f4c1 Mon Sep 17 00:00:00 2001
+From: Vlad-Andrei Badoiu <vlad_andrei.badoiu@stud.acs.upb.ro>
+Date: Thu, 2 May 2019 18:53:22 +0300
+Subject: [PATCH 1/1] Add header config file for Unikraft
+
+Signed-off-by: Vlad-Andrei Badoiu <vlad_andrei.badoiu@stud.acs.upb.ro>
+---
+ Eigen/Core | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Eigen/Core b/Eigen/Core
+index b923b8c..dc531cb 100644
+--- a/Eigen/Core
++++ b/Eigen/Core
+@@ -11,6 +11,8 @@
+ #ifndef EIGEN_CORE_H
+ #define EIGEN_CORE_H
+ 
++#include <__unikraft_eigen_config.h>
++
+ // first thing Eigen does: stop the compiler from committing suicide
+ #include "src/Core/util/DisableStupidWarnings.h"
+ 
+-- 
+2.21.0
+

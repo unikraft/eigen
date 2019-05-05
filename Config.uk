@@ -1,0 +1,4 @@
+menuconfig LIBEIGEN
+    bool "eigen - C++ template library for linear algebra"
+    select LIBCXX
+    default n
