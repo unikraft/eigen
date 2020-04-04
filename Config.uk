@@ -1,4 +1,11 @@
 menuconfig LIBEIGEN
     bool "eigen - C++ template library for linear algebra"
     select LIBCXX
+    select LIBCXXABI
+    select LIBNEWLIBC
+    select LIBUNWIND
+    select LIBPOSIX_SYSINFO
+    select LIBCOMPILER_RT
+    select LIBCOMPILER_RT_ATOMIC
+    select LIBPTHREAD_EMBEDDED
     default n

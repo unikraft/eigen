@@ -36,26 +36,20 @@
 ################################################################################
 $(eval $(call addlib_s,libeigen,$(CONFIG_LIBEIGEN)))
 
-ifeq ($(CONFIG_LIBEIGEN),y)
-ifneq ($(CONFIG_LIBCXX),y)
-$(error Require libcxx)
-endif
-endif
-
-
 ################################################################################
 # Sources
 ################################################################################
-LIBEIGEN_VERSION=3.3.7
-LIBEIGEN_URL=http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz
+LIBEIGEN_COMMIT=049af2f56331
 LIBEIGEN_PATCHDIR=$(LIBEIGEN_BASE)/patches
+
+LIBEIGEN_URL=https://bitbucket.org/eigen/eigen/get/${LIBEIGEN_COMMIT}.tar.gz
 $(eval $(call fetch,libeigen,$(LIBEIGEN_URL)))
-$(eval $(call patch,libeigen,$(LIBEIGEN_PATCHDIR),eigen-eigen-323c052e1731))
+$(eval $(call patch,libeigen,$(LIBEIGEN_PATCHDIR),eigen-eigen-$(LIBEIGEN_COMMIT)))
 
 ################################################################################
 # Helpers
 ################################################################################
-LIBEIGEN_SUBDIR=eigen-eigen-323c052e1731
+LIBEIGEN_SUBDIR=eigen-eigen-$(LIBEIGEN_COMMIT)
 LIBEIGEN_SRC=$(LIBEIGEN_ORIGIN)/$(LIBEIGEN_SUBDIR)
 
 ################################################################################
@@ -79,5 +73,5 @@ SUPPRESS_FLAGS += -Wno-unused-parameter -Wno-unused-variable -Wno-nonnull	\
 -Wno-missing-braces -Wno-endif-labels -Wno-unused-but-set-variable		\
 -Wno-implicit-function-declaration -Wno-type-limits -Wno-sign-compare
 
-LIBEIGEN_CFLAGS-y    +=  $(SUPPRESS_FLAGS)
-LIBEIGEN_CXXFLAGS-y    +=  $(SUPPRESS_FLAGS)
+LIBEIGEN_CFLAGS-y += $(SUPPRESS_FLAGS)
+LIBEIGEN_CXXFLAGS-y += $(SUPPRESS_FLAGS)
