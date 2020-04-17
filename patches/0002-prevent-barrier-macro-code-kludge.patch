@@ -1,0 +1,10 @@
+--- a/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceThreadPool.h	2020-04-17 17:13:19.072796790 +0200
++++ b/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceThreadPool.h	2021-04-17 17:13:41.800543414 +0200
+@@ -98,6 +98,7 @@
+       const char* src_ptr = static_cast<const char*>(src);
+       char* dst_ptr = static_cast<char*>(dst);
+       const size_t blocksize = (n + (num_threads - 1)) / num_threads;
++#undef barrier      
+       Barrier barrier(static_cast<int>(num_threads - 1));
+       // Launch the last 3 blocks on worker threads.
+       for (size_t i = 1; i < num_threads; ++i) {
