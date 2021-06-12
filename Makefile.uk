@@ -42,7 +42,7 @@ $(eval $(call addlib_s,libeigen,$(CONFIG_LIBEIGEN)))
 LIBEIGEN_COMMIT=049af2f56331
 LIBEIGEN_PATCHDIR=$(LIBEIGEN_BASE)/patches
 
-LIBEIGEN_URL=https://bitbucket.org/eigen/eigen/get/${LIBEIGEN_COMMIT}.tar.gz
+LIBEIGEN_URL=https://storage.googleapis.com/mirror.tensorflow.org/bitbucket.org/eigen/eigen/get/${LIBEIGEN_COMMIT}.tar.gz
 $(eval $(call fetch,libeigen,$(LIBEIGEN_URL)))
 $(eval $(call patch,libeigen,$(LIBEIGEN_PATCHDIR),eigen-eigen-$(LIBEIGEN_COMMIT)))
 
