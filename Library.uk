@@ -1,0 +1,6 @@
+name        := "eigen"
+description := "A C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms."
+gitrepo     := "https://gitlab.com/libeigen/eigen.git"
+homepage    := "http://eigen.tuxfamily.org/"
+version     := 049af2f56331 sha256:f3d69ac773ecaf3602cb940040390d4e71a501bb145ca9e01ce5464cf6d4eb68 http://mirror.tensorflow.org/bitbucket.org/eigen/eigen/get/049af2f56331.tar.gz
+license     := "MPL-2.0"
